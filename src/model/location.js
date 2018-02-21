@@ -6,7 +6,7 @@ import httpError from 'http-errors';
 const locationSchema = mongoose.Schema({
     airportCode: {type: String, required: true, unique: true},
     locationName: {type: String, required: true, unique: true},
-    flights: {type: mongoose.Schema.Types.ObjectId, ref: 'flight'},
+    flights: [{type: mongoose.Schema.Types.ObjectId, ref: 'flight'}],
 })
 
 const Location = mongoose.model('location', locationSchema);
@@ -41,6 +41,15 @@ Location.update = function(data, locationId) {
     if(!data) return new httpError(400, 'location data missing');
 
     return Location.findByIdAndUpdate(locationId, data)
+        .then(location => location)
+        .then(() => next())
+        .catch(next);
+}
+
+Location.delete = function(locationId) {
+    if(!locationId) return new httpError(400, 'location id missing')
+
+    return Location.findByIdAndRemove(locationId)
         .then(location => location)
         .then(() => next())
         .catch(next);

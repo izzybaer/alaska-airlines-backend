@@ -1,0 +1,44 @@
+{
+  "name": "alaska-airlines-backend",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/izzybaer/alaska-airlines-backend.git",
+  "author": "Izabella Baer <izabellabaer@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "lint": "eslint ./",
+    "test": "jest -i --verbose --coverage --runInBand",
+    "start": "node index.js",
+    "dboff": "killall mongod",
+    "watch": "nodemon index.js",
+    "dbon": "mkdir -p ./db && mongod --dbpath ./db"
+  },
+  "dependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.0",
+    "babel-eslint": "^8.2.2",
+    "babel-jest": "^22.4.0",
+    "babel-loader": "^7.1.2",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-react": "^6.24.1",
+    "babel-register": "^6.26.0",
+    "bcrypt": "^1.0.3",
+    "body-parser": "^1.18.2",
+    "cors": "^2.8.4",
+    "dotenv": "^5.0.0",
+    "expect": "^22.4.0",
+    "express": "^4.16.2",
+    "fs-extra": "^5.0.0",
+    "http-errors": "^1.6.2",
+    "jsonwebtoken": "^8.1.1",
+    "mongoose": "^5.0.6",
+    "morgan": "^1.9.0"
+  },
+  "devDependencies": {
+    "eslint": "^4.18.0",
+    "faker": "^4.1.0",
+    "jest": "^22.4.0",
+    "superagent": "^3.8.2"
+  }
+}

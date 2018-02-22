@@ -2,6 +2,7 @@
 
 import Flight from '../model/flight';
 import httpErrors from 'http-errors';
+import * as compile from '../lib/compile';
 
 const jsonParser = require('body-parser').json();
 const flightRouter = module.exports = new require('express').Router();
@@ -9,9 +10,11 @@ const flightRouter = module.exports = new require('express').Router();
 flightRouter.post('/api/flights', jsonParser, (req, res, next) => {
     console.log('hit POST /api/flights');
 
-    return new Flight(req.body).save()
-        .then(flight => res.json(flight))
-        .catch(next);
+    return compile.csvGetFlights()
+        .then(data => console.log(data))
+        .then(() => res.sendStatus(200))
+        .catch(err => err.status);
+
 });
 
 flightRouter.get('/api/flights/:id', (req, res, next) => {

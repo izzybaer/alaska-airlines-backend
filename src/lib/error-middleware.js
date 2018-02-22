@@ -2,7 +2,7 @@
 
 module.exports = (err, req, res, next) => {
     
-    let message = error.message.toLowerCase();
+    let message = err.message.toLowerCase();
 
     if(message.includes('objectid failed')) {
         console.log('objectid failed: responding with a 404 status code');

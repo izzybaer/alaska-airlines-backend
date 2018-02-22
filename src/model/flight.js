@@ -22,13 +22,24 @@ const flightSchema = mongoose.Schema({
 const Flight = mongoose.model('flight', flightSchema);
 
 Flight.create = function(locationId, flightInfo) {
-    if(!locationId) return new httpError(400, 'location missing')
+    if(!flightInfo) return new httpError(400, 'location missing')
     
-    // need to use Location in here
-    return new Flight(locationId).save()
-        .then(newFlight => newFlight)
-        .then(() => next())
-        .catch(next);
+    // need to use Location in here... 
+    // .populate() ??
+    return Location.findById(locationId)
+        .then(location => {
+            return new Flight(flightInfo).save()
+                .then(newFlight => {
+                    location.flights.push(newFlight)
+                    return location.save()
+                        .then(newFlight => newFlight)
+                        .then(() => next())
+                        .catch(next);
+                })
+                .then(location => location)
+                .then(() => next())
+                .catch(next);
+        })
 }
 
 Flight.fetchOne = function(flightId) {
@@ -44,4 +55,17 @@ Flight.fetchAll = function() {
         .then(() => next())
         .catch(next)
 }
+
+Flight.flightPlan = function() {
+    
+}
+
+Flight.update = function() {
+
+}
+
+Flight.delete = function() {
+
+}
+
 export default Flight;

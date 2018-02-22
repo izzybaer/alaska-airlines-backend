@@ -55,4 +55,17 @@ Flight.fetchAll = function() {
         .then(() => next())
         .catch(next)
 }
+
+Flight.flightPlan = function() {
+    
+}
+
+Flight.update = function() {
+
+}
+
+Flight.delete = function() {
+
+}
+
 export default Flight;

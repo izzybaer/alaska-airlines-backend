@@ -1,7 +1,7 @@
 'use strict';
 
-import Flight from '../model/flight';
 import httpErrors from 'http-errors';
+import Flight from '../model/flight';
 import * as compile from '../lib/compile';
 
 const jsonParser = require('body-parser').json();
@@ -10,7 +10,7 @@ const flightRouter = module.exports = new require('express').Router();
 flightRouter.post('/api/flights', jsonParser, (req, res, next) => {
     console.log('hit POST /api/flights');
 
-    return compile.csvGetFlights()
+    return compile.csvGet()
         .then(data => console.log(data))
         .then(() => res.sendStatus(200))
         .catch(err => err.status);
@@ -20,8 +20,7 @@ flightRouter.post('/api/flights', jsonParser, (req, res, next) => {
 flightRouter.get('/api/flights/:id', (req, res, next) => {
     console.log('hit GET /api/flights/:id');
 
-    return Flight.findById(request.params.id)
-        .populate('location') // izzy - use this with care
+    return Flight.findById(req.params.id).populate('location') // izzy - use this with care
         .then(flight => { // with great power comes great responsibility
             if(!flight) {
                 throw httpErrors(404, 'flight not found')
@@ -30,7 +29,7 @@ flightRouter.get('/api/flights/:id', (req, res, next) => {
         }).catch(next);
 });
 
-flightRouter.get('/api/flights/', (req, res, next) => {
+flightRouter.get('/api/flights', (req, res, next) => {
     console.log('hit GET /api/flights');
 
     let allFlights = null;

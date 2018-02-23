@@ -16,8 +16,8 @@ const app = express();
 app.use(bodyParser.json());
 
 // izzy - load routes
-app.use(require('../route/flight-router'));
 app.use(require('../route/location-router'));
+app.use(require('../route/flight-router'));
 
 // izzy - catch all 404 route
 app.all('/api/*', (req, res, next) => res.sendStatus(404));

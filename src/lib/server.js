@@ -7,7 +7,7 @@ import bodyParser from 'body-parser';
 
 // izzy - module logic - * config and connect to mongo
 mongoose.Promise = Promise;
-mongoose.connect(process.env.MONGODB_URI, {useMongoClient: true});
+mongoose.connect(process.env.MONGODB_URI);
 
 // izzy - create app
 const app = express();
@@ -17,7 +17,7 @@ app.use(bodyParser.json());
 
 // izzy - load routes
 app.use(require('../route/flight-router'));
-app.use(require('../route/user-router'));
+app.use(require('../route/location-router'));
 
 // izzy - catch all 404 route
 app.all('/api/*', (req, res, next) => res.sendStatus(404));

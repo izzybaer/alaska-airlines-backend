@@ -1,0 +1,32 @@
+{"level":"info","message":"processing: POST on: /api/locations","timestamp":"2018-02-23T20:22:57.090Z"}
+{"level":"info","message":"processing: POST on: /api/locations","timestamp":"2018-02-23T20:25:29.152Z"}
+{"level":"info","message":"__ERROR_MIDDLEWARE__","timestamp":"2018-02-23T20:25:29.179Z"}
+{"code":11000,"index":0,"errmsg":"E11000 duplicate key error collection: aa-dev.locations index: Code_1 dup key: { : \"BWI\" }","op":{"Name":"Baltimore","Code":"BWI","flights":[],"_id":"5a9078b90049cd12ab5a0072","__v":0}}
+{"level":"info","message":"duplicate key error: responding with a 409 status code","timestamp":"2018-02-23T20:25:29.180Z"}
+{"level":"info","message":"processing: POST on: /api/locations","timestamp":"2018-02-23T20:25:51.978Z"}
+{"level":"info","message":"__ERROR_MIDDLEWARE__","timestamp":"2018-02-23T20:25:51.991Z"}
+{"message":"Cannot read property 'then' of undefined","stack":"TypeError: Cannot read property 'then' of undefined\n    at /Users/izzybaer/projects/alaska-airlines/alaska-airlines-backend/src/route/location-router.js:20:16\n    at <anonymous>\n    at process._tickCallback (internal/process/next_tick.js:160:7)","level":"info","timestamp":"2018-02-23T20:25:51.991Z"}
+{"level":"info","message":"responding with a 500 status code","timestamp":"2018-02-23T20:25:51.992Z"}
+{"message":"Cannot read property 'then' of undefined","stack":"TypeError: Cannot read property 'then' of undefined\n    at /Users/izzybaer/projects/alaska-airlines/alaska-airlines-backend/src/route/location-router.js:20:16\n    at <anonymous>\n    at process._tickCallback (internal/process/next_tick.js:160:7)","level":"info","timestamp":"2018-02-23T20:25:51.992Z"}
+{"level":"info","message":"processing: POST on: /api/locations","timestamp":"2018-02-23T23:26:18.320Z"}
+{"level":"info","message":"__ERROR_MIDDLEWARE__","timestamp":"2018-02-23T23:26:18.350Z"}
+{"message":"Cannot read property 'then' of undefined","stack":"TypeError: Cannot read property 'then' of undefined\n    at /Users/izzybaer/projects/alaska-airlines/alaska-airlines-backend/src/route/location-router.js:20:16\n    at <anonymous>\n    at process._tickCallback (internal/process/next_tick.js:160:7)","level":"info","timestamp":"2018-02-23T23:26:18.350Z"}
+{"level":"info","message":"responding with a 500 status code","timestamp":"2018-02-23T23:26:18.351Z"}
+{"message":"Cannot read property 'then' of undefined","stack":"TypeError: Cannot read property 'then' of undefined\n    at /Users/izzybaer/projects/alaska-airlines/alaska-airlines-backend/src/route/location-router.js:20:16\n    at <anonymous>\n    at process._tickCallback (internal/process/next_tick.js:160:7)","level":"info","timestamp":"2018-02-23T23:26:18.351Z"}
+{"level":"info","message":"processing: POST on: /api/locations","timestamp":"2018-02-23T23:30:54.190Z"}
+{"level":"info","message":"returning a 404 from the catch-all route","timestamp":"2018-02-23T23:30:54.226Z"}
+{"level":"info","message":"processing: POST on: /api/locations","timestamp":"2018-02-23T23:33:08.480Z"}
+{"level":"info","message":"returning a 404 from the catch-all route","timestamp":"2018-02-23T23:33:08.510Z"}
+{"level":"info","message":"processing: POST on: /api/locations","timestamp":"2018-02-23T23:37:57.534Z"}
+{"level":"info","message":"processing: POST on: /api/locations","timestamp":"2018-02-23T23:40:16.505Z"}
+{"level":"info","message":"processing: POST on: /api/locations","timestamp":"2018-02-23T23:45:48.372Z"}
+{"level":"info","message":"processing: POST on: /api/locations","timestamp":"2018-02-23T23:46:33.188Z"}
+{"level":"info","message":"processing: POST on: /api/locations","timestamp":"2018-02-23T23:53:15.558Z"}
+{"level":"info","message":"processing: POST on: /api/locations","timestamp":"2018-02-23T23:54:40.830Z"}
+{"level":"info","message":"processing: POST on: /api/locations","timestamp":"2018-02-23T23:55:40.184Z"}
+{"level":"info","message":"processing: POST on: /api/locations","timestamp":"2018-02-23T23:58:17.247Z"}
+{"level":"info","message":"processing: POST on: /api/locations","timestamp":"2018-02-23T23:59:15.967Z"}
+{"level":"info","message":"processing: POST on: /api/locations","timestamp":"2018-02-24T00:02:49.083Z"}
+{"level":"info","message":"processing: POST on: /api/locations","timestamp":"2018-02-24T00:04:23.566Z"}
+{"level":"info","message":"processing: POST on: /api/locations","timestamp":"2018-02-24T00:06:10.427Z"}
+{"level":"info","message":"returning a 404 from the catch-all route","timestamp":"2018-02-24T00:06:10.468Z"}

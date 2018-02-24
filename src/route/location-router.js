@@ -1,21 +1,29 @@
 'use strict';
 
+import {Router} from 'express';
+import logger from '../lib/logger';
 import httpErrors from 'http-errors';
 import Location from '../model/location';
 import * as compile from '../lib/compile';
 
 const jsonParser = require('body-parser').json();
-const locationRouter = module.exports = new require('express').Router();
+const locationRouter = module.exports = new Router();
 
 locationRouter.post('/api/locations', jsonParser, (req, res, next) => {
     console.log('hit POST /api/locations');
-    // if(!Name || !Code) return next(httpErrors(400, 'location needs a name and airport code'));
-
-    return compile.csvGet()
-        .then(data => console.log(data))
-        .then(() => res.sendStatus(200))
-        .then(() => next())
-        .catch(next);
+    if(!req.body.Name || !req.body.Code) 
+        return next(httpErrors(400, 'location needs a name and airport code'));
+        
+    return new Location(req.body).save()
+      .then(location => {
+        console.log('__REQ_BODY__', req.body);
+        return compile.csvGet()
+        console.log(req.body, 'REQ.BODY inside csvGet fn in POST route')
+          .then(location => res.sendStatus(200).json(location))
+          .catch(err => next(err));
+    })
+    .then(() => next())
+    .catch(next);
 });
 
 locationRouter.get('/api/locations/:id', (req, res, next) => {
@@ -63,4 +71,4 @@ locationRouter.delete('/api/locations/:id', (req, res, next) => {
             }
             return res.sendStatus(204);
         }).catch(next);
-});
+})

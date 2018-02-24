@@ -1,19 +1,24 @@
 'use strict';
 
+import {Router} from 'express';
+import logger from '../lib/logger';
 import httpErrors from 'http-errors';
 import Flight from '../model/flight';
 import * as compile from '../lib/compile';
 
 const jsonParser = require('body-parser').json();
-const flightRouter = module.exports = new require('express').Router();
+const flightRouter = module.exports = new Router();
 
 flightRouter.post('/api/flights', jsonParser, (req, res, next) => {
+    if(!req.body.From || !req.body.To || !req.body.FlightNumber || !req.body.Departs || !req.body.Arrives || !req.body.MainCabinPrice || !req.body.FirstClassPrice || !req.body.locationId){
+        return next(httpErrors(400, 'from, to, flight number, departs, arrives, maincabinprice, firstclasscabinprice, locationId required'));
+    }
     console.log('hit POST /api/flights');
 
     return compile.csvGet()
         .then(data => console.log(data))
         .then(() => res.sendStatus(200))
-        .catch(err => err.status);
+        .catch(err => next(err));
 
 });
 

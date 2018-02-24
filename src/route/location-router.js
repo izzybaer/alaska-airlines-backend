@@ -10,19 +10,14 @@ const jsonParser = require('body-parser').json();
 const locationRouter = module.exports = new Router();
 
 locationRouter.post('/api/locations', jsonParser, (req, res, next) => {
-    console.log('hit POST /api/locations');
-    if(!req.body.Name || !req.body.Code) 
+    if(!req.body.Name || !req.body.Code) {
         return next(httpErrors(400, 'location needs a name and airport code'));
+    }
+    console.log('hit POST /api/locations');
         
-    return new Location(req.body).save()
-      .then(location => {
-        console.log('__REQ_BODY__', req.body);
-        return compile.csvGet()
-        console.log(req.body, 'REQ.BODY inside csvGet fn in POST route')
-          .then(location => res.sendStatus(200).json(location))
-        //   .catch(err => next(err));
-    })
-    .catch(next);
+    return compile.csvGet()
+          .then(() => res.sendStatus(200))
+          .catch(err => next(err));
 });
 
 locationRouter.get('/api/locations/:id', (req, res, next) => {

@@ -12,55 +12,55 @@ const Flight = mongoose.Schema({
     Arrives: { type: Number, required: true },
     MainCabinPrice: { type: Number, required: true },
     FirstClassPrice: { type: Number, required: true },
-    // locationId: {type: mongoose.Schema.Types.ObjectId, ref: 'location'},
+    locationId: {type: mongoose.Schema.Types.ObjectId, ref: 'location'},
 });
 
 
 module.exports = mongoose.model('flight', Flight);
 
-// Flight.create = function(locationId, flightInfo) {
-//     if(!flightInfo) return new httpError(400, 'location missing')
+Flight.create = function(locationId, flightInfo) {
+    if(!flightInfo) return new httpError(400, 'location missing')
     
-//     // need to use Location in here... 
-//     // .populate() ??
-//     return Location.findById(locationId)
-//         .then(location => {
-//             return new Flight(flightInfo).save()
-//                 .then(newFlight => {
-//                     location.flights.push(newFlight)
-//                     return location.save()
-//                         .then(newFlight => newFlight)
-//                         .then(() => next())
-//                         .catch(next);
-//                 })
-//                 .then(location => location)
-//                 .then(() => next())
-//                 .catch(next);
-//         })
-// }
+    // need to use Location in here... 
+    // .populate() ??
+    return Location.findById(locationId)
+        .then(location => {
+            return new Flight(flightInfo).save()
+                .then(newFlight => {
+                    location.flights.push(newFlight)
+                    return location.save()
+                        .then(newFlight => newFlight)
+                        .then(() => next())
+                        .catch(next);
+                })
+                .then(location => location)
+                .then(() => next())
+                .catch(next);
+        })
+}
 
-// Flight.fetchOne = function(flightId) {
-//     if(!flightId) return new httpError(400, 'flight id missing')
+Flight.fetchOne = function(locationId) {
+    if(!locationId) return new httpError(400, 'flight id missing')
 
-//     return Flight.findById(flightId).populate()
-// }
+    return Flight.findById(locationId).populate()
+}
 
-// Flight.fetchAll = function() {
+Flight.fetchAll = function() {
 
-//     return Flight.find()
-//         .then(flights => flights)
-//         .then(() => next())
-//         .catch(next)
-// }
+    return Flight.find()
+        .then(flights => flights)
+        .then(() => next())
+        .catch(next)
+}
 
-// Flight.flightPlan = function() {
+Flight.flightPlan = function() {
     
-// }
+}
 
-// Flight.update = function() {
+Flight.update = function() {
 
-// }
+}
 
-// Flight.delete = function() {
+Flight.delete = function() {
 
-// }
+}

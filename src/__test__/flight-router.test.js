@@ -7,22 +7,23 @@ import superagent from 'superagent';
 
 const apiURL = `http://localhost:${process.env.PORT}`;
 
-describe('/api/locations', () => {
+describe('/api/flights', () => {
     beforeAll(server.start);
     afterAll(server.stop);
-    // afterEach(locationRemove);
+    // afterEach(flightRemove);
 
-    describe('POST /api/locations', () => {
-        it('should return a 200 and a location if there are no errors', () => {
-            return superagent.post(`${apiURL}/api/locations`)
+    describe('POST /api/flights', () => {
+        it('should return a 200 and a flight if there are no errors', () => {
+            return superagent.post(`${apiURL}/api/flights`)
                 .send({
-                    'Name': 'Baltimore',
-                    'Code': 'BWI',
+                    'To': 'SEA',
+                    'From': 'LAS',
+                    'FlightNumber': 8973,
                 })
                 .then(res => {
                     expect(res.status).toEqual(200);
                     expect(res.body).toBeTruthy();
                 });
+            });
         });
-    });
 });

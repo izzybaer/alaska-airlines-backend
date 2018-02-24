@@ -10,17 +10,13 @@ const jsonParser = require('body-parser').json();
 const flightRouter = module.exports = new Router();
 
 flightRouter.post('/api/flights', jsonParser, (req, res, next) => {
-    // if(!req.body.From || !req.body.To || !req.body.FlightNumber || !req.body.Departs || !req.body.Arrives || !req.body.MainCabinPrice || !req.body.FirstClassPrice){
-    //     return next(httpErrors(400, 'from, to, flight number, departs, arrives, maincabinprice, firstclasscabinprice, locationId required'));
-    // }
+    if(!req.body.From || !req.body.To || !req.body.FlightNumber){
+        return next(httpErrors(400, 'From, To, and FlightNumber are required'));
+    }
     console.log('hit POST /api/flights');
-    console.log(compile)
     return compile.csvGet()
-        // console.log(compile)
         .then(() => res.sendStatus(200))
-        // .then(data => console.log(data))
         .catch(err => next(err));
-
 });
 
 flightRouter.get('/api/flights/:id', (req, res, next) => {

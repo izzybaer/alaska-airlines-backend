@@ -19,14 +19,14 @@ app.use(bodyParser.json());
 app.use(require('./logger-middleware'));
 
 // izzy - load routes
+// app.use(require('../route/location-router'));
 app.use(require('../route/flight-router'));
-app.use(require('../route/location-router'));
 
 // izzy - catch all 404 route
-app.all('/api/*', (req, res, next) => {
-    logger.log('info', 'returning a 404 from the catch-all route');
-    return res.sendStatus(404);
-});
+// app.all('*', (req, res) => {
+//     logger.log('info', 'returning a 404 from the catch-all route');
+//     return res.sendStatus(404);
+// });
 
 // izzy - load error middleware
 app.use(require('./error-middleware'));

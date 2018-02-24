@@ -20,9 +20,8 @@ locationRouter.post('/api/locations', jsonParser, (req, res, next) => {
         return compile.csvGet()
         console.log(req.body, 'REQ.BODY inside csvGet fn in POST route')
           .then(location => res.sendStatus(200).json(location))
-          .catch(err => next(err));
+        //   .catch(err => next(err));
     })
-    .then(() => next())
     .catch(next);
 });
 

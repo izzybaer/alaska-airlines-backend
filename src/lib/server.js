@@ -1,13 +1,14 @@
 'use strict';
 
 // izzy - modules
+import logger from './logger';
 import express from 'express';
 import mongoose from 'mongoose';
 import bodyParser from 'body-parser';
 
 // izzy - module logic - * config and connect to mongo
 mongoose.Promise = Promise;
-mongoose.connect(process.env.MONGODB_URI);
+mongoose.connect('mongodb://localhost/aa-dev');
 
 // izzy - create app
 const app = express();
@@ -15,12 +16,17 @@ const app = express();
 // izzy - need body parser
 app.use(bodyParser.json());
 
+app.use(require('./logger-middleware'));
+
 // izzy - load routes
-app.use(require('../route/flight-router'));
 app.use(require('../route/location-router'));
+app.use(require('../route/flight-router'));
 
 // izzy - catch all 404 route
-app.all('/api/*', (req, res, next) => res.sendStatus(404));
+// app.all('*', (req, res) => {
+//     logger.log('info', 'returning a 404 from the catch-all route');
+//     return res.sendStatus(404);
+// });
 
 // izzy - load error middleware
 app.use(require('./error-middleware'));

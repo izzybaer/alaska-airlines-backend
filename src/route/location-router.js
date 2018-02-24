@@ -23,10 +23,10 @@ locationRouter.post('/api/locations', jsonParser, (req, res, next) => {
 locationRouter.get('/api/locations/:id', (req, res, next) => {
     console.log('hit GET /api/locations/:id');
 
-    return Location.findById(req.params.id).populate('flights')
+    return Location.findById(req.params.id)
         .then(location => {
             if(!location) {
-                throw httpErrors(404, 'location not found');
+                return next(httpErrors(404, "location not found"));
             }
             return res.json(location);
         }).catch(next);

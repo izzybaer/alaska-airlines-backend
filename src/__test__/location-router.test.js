@@ -1,6 +1,6 @@
 'use strict'
 
-require('./setup');
+require('./lib/setup');
 
 import server from '../lib/server';
 import superagent from 'superagent';

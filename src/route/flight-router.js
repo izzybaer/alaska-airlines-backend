@@ -30,7 +30,7 @@ flightRouter.get('/api/flights', (req, res, next) => {
 flightRouter.get('/api/flights/search', (req, res, next) => {
     console.log('hit GET /api/flights/search');
     
-    Flight.flightSearch(req.params.To, req.params.From)
+    Flight.flightSearch(req.body.From, req.body.To)
       .then(flights => res.json(flights))
       .catch(err => new Error(err.status, err.message));
 });

@@ -13,30 +13,25 @@ const flightSchema = mongoose.Schema({
     FlightNumber: { type: Number, required: true },
     MainCabinPrice: { type: Number, required: true },
     FirstClassPrice: { type: Number, required: true },
-    locationId: {type: mongoose.Schema.Types.ObjectId, ref: 'location'},
+    locationId: { type: mongoose.Schema.Types.ObjectId, ref: 'location' },
 });
 
 
 const Flight = module.exports = mongoose.model('flight', flightSchema);
 
 
-// Flight.flightSearch = function(To, From) {
+Flight.flightSearch = function(from, to) {
 
-//     return Flight.find({
-//         To: {$eq: To},
-//         From: {$eq: From}
-//     })
-//     .select('To From')
-//     .exec()
-//     .then(flights => flights)
-//     .catch(err => Promise.);
-// };
+    return Flight.find({ From: from, To: to })
+      .then(flights => Promise.resolve(flights))
+      .catch(err => Promise.reject(new httpError(err.status, err.message)));
+};
 
 Flight.fetchAll = function() {
 
     return Flight.find()
         .then(flights => Promise.resolve(flights))
-        .catch(err => Promise.reject(new httpError(404, err.message)));
+        .catch(err => Promise.reject(new httpError(err.status, err.message)));
 }
 
 export default Flight;

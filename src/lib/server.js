@@ -1,67 +1,66 @@
 'use strict';
 
-// izzy - modules
-import logger from './logger';
-import express from 'express';
-import mongoose from 'mongoose';
-import bodyParser from 'body-parser';
+import express from 'express'
+const mongoose = require('mongoose');
+const logger = require('./logger');
 
-// izzy - module logic - * config and connect to mongo
-mongoose.Promise = Promise;
-mongoose.connect('mongodb://localhost/aa-dev');
-
-// izzy - create app
 const app = express();
+let isServerOn = false;
+let httpServer = null;
 
-// izzy - need body parser
-app.use(bodyParser.json());
+// mongoose and mongodb
+mongoose.Promise = Promise;
 
+// routes
 app.use(require('./logger-middleware'));
 
-// izzy - load routes
-app.use(require('../route/location-router'));
 app.use(require('../route/flight-router'));
 
-// izzy - catch all 404 route
-// app.all('*', (req, res) => {
-//     logger.log('info', 'returning a 404 from the catch-all route');
-//     return res.sendStatus(404);
-// });
+// izzy - this should be at the end
+app.all('*', (request,response) => {
+  logger.log('info','Returning a 404 from the catch-all route');
+  return response.sendStatus(404);
+});
 
-// izzy - load error middleware
+// izzy - error middleware
 app.use(require('./error-middleware'));
+//--------------------------------------------------------
 
-// export server start and server stop
 const server = module.exports = {};
 
-server.isOn = false;
-
 server.start = () => {
-    return new Promise((resolve, reject) => {
-        if(!server.isOn) {
-            server.http = app.listen(process.env.PORT, () => {
-                console.log(`__SERVER__: is running on  ${process.env.PORT}`);
-                resolve();
-            })
-            return
-        }
-        reject(new Error('__SERVER__: is already running'));
-    })
-}
+  return new Promise((resolve,reject) => {
+    if(isServerOn){
+      logger.log('error','__SERVER_ERROR__ server is already on');
+      return reject(new Error('__SERVER_ERROR__ server is already on'));
+    }
+    httpServer = app.listen(process.env.PORT, () => {
+      isServerOn = true;
+      console.log(`Server is listening on port ${process.env.PORT}`);
+      logger.log('info',`Server is listening on port ${process.env.PORT}`);
+      return resolve();
+    });
+  })
+    .then(mongoose.connect(process.env.MONGODB_URI));
+};
 
 server.stop = () => {
-    return new Promise((resolve, reject) => {
-        if(server.http && server.isOn) {
-            return server.http.close(() => {
-                server.isOn = false;
-                console.log('__SERVER__: off');
-                resolve();
-            })
-        }
-        reject(new Error('__SERVER__: not running'));
-    })
-}
-
-
-
-
+  return new Promise((resolve,reject) => {
+    if(!isServerOn){
+      logger.log('error','__SERVER_ERROR__ server is already off');
+      return reject(new Error('__SERVER_ERROR__ server is already off'));
+    }
+    // izzy  - this code might be refactored
+    if(!httpServer){
+      logger.log('error','__SERVER_ERROR__ there is no server to close');
+      return reject(new Error('__SERVER_ERROR__ there is no server to close'));
+    }
+    httpServer.close(() => {
+      isServerOn = false;
+      httpServer = null;
+      logger.log('info','Server off');
+      return resolve();
+    });
+  })
+    .then(() => mongoose.disconnect());
+};

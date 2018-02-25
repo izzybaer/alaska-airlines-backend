@@ -25,6 +25,13 @@ describe('/api/locations', () => {
                     expect(res.body.Code).toEqual('BWI');
                 });
         });
+
+        it('should respond with a 409 for a duplicate key', () => {
+            return locationMock.create()
+                .then(location => {
+                    return superagent.post(`${apiURL}/api/locations`)
+                })
+        })
     });
 
     describe('GET /api/locations', () => {
@@ -34,7 +41,7 @@ describe('/api/locations', () => {
             return locationMock.create()
                 .then(location => {
                     tempLocationMock = location;
-                    return superagent.get(`${apiURL}`);
+                    return superagent.get(`${apiURL}/api/locations`);
                 })
                 .then(res => {
                     expect(res.status).toEqual(200);

@@ -20,17 +20,17 @@ locationRouter.post('/api/locations', jsonParser, (req, res, next) => {
           .catch(err => next(err));
 });
 
-locationRouter.get('/api/locations/:id', (req, res, next) => {
-    console.log('hit GET /api/locations/:id');
+// locationRouter.get('/api/locations/:id', (req, res, next) => {
+//     console.log('hit GET /api/locations/:id');
 
-    return Location.findById(req.params.id)
-        .then(location => {
-            if(!location) {
-                return next(httpErrors(404, "location not found"));
-            }
-            return res.json(location);
-        }).catch(next);
-});
+//     return Location.findById(req.params.id)
+//         .then(location => {
+//             if(!location) {
+//                 return next(httpErrors(404, "location not found"));
+//             }
+//             return res.json(location);
+//         }).catch(next);
+// });
 
 locationRouter.get('/api/locations', (req, res, next) => {
     console.log('hit GET /api/locations');

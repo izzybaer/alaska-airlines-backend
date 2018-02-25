@@ -113,3 +113,7 @@
 {"level":"info","message":"processing: GET on: /api/locations","timestamp":"2018-02-24T02:28:52.971Z"}
 {"level":"info","message":"processing: POST on: /api/locations","timestamp":"2018-02-24T02:32:12.608Z"}
 {"level":"info","message":"processing: GET on: /api/locations","timestamp":"2018-02-24T02:32:18.018Z"}
+{"level":"info","message":"processing: POST on: /api/flights","timestamp":"2018-02-24T21:35:26.248Z"}
+{"level":"info","message":"processing: POST on: /api/flights","timestamp":"2018-02-24T22:25:08.194Z"}
+{"level":"info","message":"processing: GET on: /api/flights","timestamp":"2018-02-24T22:25:12.702Z"}
+{"level":"info","message":"processing: POST on: /api/locations","timestamp":"2018-02-24T22:28:10.380Z"}

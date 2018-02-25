@@ -2,6 +2,7 @@
 
 require('./lib/setup');
 
+import faker from 'faker';
 import server from '../lib/server';
 import superagent from 'superagent';
 import Flight from '../model/flight';
@@ -9,15 +10,29 @@ import Flight from '../model/flight';
 const apiURL = `http://localhost:${process.env.PORT}`;
 
 const flightMock = () => {
+    let airportCodes = ['BWI', 'AER', 'ANC', 'ATL', 'BTR', 'AUS', 'BET', 'BHM', 'BUF']
+
+    for(let i = 0; i < airportCodes.length; i++) {
+        return airportCodes[i]
+    };
+
     return new Flight({
-        To: 
-    })
-}
+        To: airportCodes[i],
+        From: airportCodes[i - 1],
+        FlightNumber: faker.random.number(4),
+    }).save();
+};
+
+const flightMockMany = (howMany) => {
+    return Promise.all(new Array(howMany)
+        .fill(0)
+        .map(() => flightMock()));
+};
 
 describe('/api/flights', () => {
     beforeAll(server.start);
     afterAll(server.stop);
-    afterEach(flightMock.remove);
+    afterEach(() => Flight.remove({}));
 
     describe('POST /api/flights', () => {
         it('should respond with a 200 and a flight if there are no errors', () => {
@@ -32,7 +47,19 @@ describe('/api/flights', () => {
                     expect(res.body).toBeTruthy();
                 });
             });
-        
+
+        it('should respond with a 400 code if we send an incomplete flight', () => {
+            let flightToPost = {
+                To: 'ATX',
+            };
+            return superagent.post(`${apiURL}/api/flights`)
+                .send(flightToPost)
+                .then(Promise.reject)
+                .catch(res => {
+                    expect(res.status).toEqual(400);
+                });
+        });
+
         it('should respond with a 409 due to a duplicate flight number', () => {
             return flightMock.create()
                 .then(flight => {
@@ -51,9 +78,9 @@ describe('/api/flights', () => {
 
         describe('GET /api/flights', () => {
             it('should respond with a 200 and all flights if there are no errors', () => {
-                return flightMock.createMany(20)
+                return flightMockMany(20)
                     .then(tempFlights => {
-                        return superagent.get(`${apiURL}/flights`);
+                        return superagent.get(`${apiURL}/api/flights`);
                     })
                     .then(res => {
                         expect(res.status).toEqual(200);

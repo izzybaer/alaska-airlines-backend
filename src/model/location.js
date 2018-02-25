@@ -3,13 +3,13 @@
 import mongoose from 'mongoose';
 import httpError from 'http-errors';
 
-const Location = mongoose.Schema({
+const locationSchema = mongoose.Schema({
     Code: {type: String, required: true, unique: true},
     Name: {type: String, required: true, unique: true},
     flights: [{type: mongoose.Schema.Types.ObjectId, ref: 'flight'}],
 })
 
-module.exports = mongoose.model('location', Location);
+const Location = module.exports = mongoose.model('location', locationSchema);
 
 Location.create = function(locationInfo) {
     if(!locationInfo) return new httpError(400, 'location name missing');
@@ -54,3 +54,5 @@ Location.delete = function(locationId) {
         .then(() => next())
         .catch(next);
 }
+
+export default Location;

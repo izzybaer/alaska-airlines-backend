@@ -6,13 +6,13 @@ import Location from './location';
 import httpError from 'http-errors';
 
 const flightSchema = mongoose.Schema({
+    Departs: { type: Number },
+    Arrives: { type: Number },
+    FlightNumber: { type: Number },
+    MainCabinPrice: { type: Number },
+    FirstClassPrice: { type: Number },
     To: { type: String, required: true },
     From: { type: String, required: true },
-    Departs: { type: Number, required: true },
-    Arrives: { type: Number, required: true },
-    FlightNumber: { type: Number, required: true },
-    MainCabinPrice: { type: Number, required: true },
-    FirstClassPrice: { type: Number, required: true },
     locationId: { type: mongoose.Schema.Types.ObjectId, ref: 'location' },
 });
 
@@ -35,14 +35,3 @@ Flight.fetchAll = function() {
 }
 
 export default Flight;
-
-
-// Flight.fetchOne = function(To, From) {
-//     if(!To || !From) return new httpError(400, 'missing required To and From feilds')
-
-//     return Flight.findOne()
-//         .then(flights => flights)
-//         .then(() => next())
-//         .catch(next)
-// }
-

@@ -11,16 +11,15 @@ const flightRouter = module.exports = new Router();
 
 flightRouter.post('/api/flights', jsonParser, (req, res, next) => {
     if(!req.body.From || !req.body.To || !req.body.FlightNumber){
-        return next(httpErrors(400, 'From, To, and FlightNumber are required'));
+        return next(httpErrors(400, 'Departure, Destination and FlightNumber required'));
     }
-    console.log('hit POST /api/flights');
+
     return compile.csvGet()
         .then(() => res.sendStatus(200))
-        .catch(err => console.log(err));
+        .catch(next);
 });
 
 flightRouter.get('/api/flights', (req, res, next) => {
-    console.log('hit GET /api/flights');
 
     Flight.fetchAll()
         .then(flights => res.json(flights))
@@ -28,27 +27,9 @@ flightRouter.get('/api/flights', (req, res, next) => {
 });
 
 flightRouter.get('/api/flights/search', (req, res, next) => {
-    console.log('hit GET /api/flights/search');
     
     Flight.flightSearch(req.body.From, req.body.To)
       .then(flights => res.json(flights))
-      .catch(err => new Error(err.status, err.message));
+      .catch(next);
 });
 
-// flightRouter.get('/api/flights/search/price', jsonParser, (req, res, next) => {
-//     console.log('hit GET /api/flights/search/price');
-    
-        
-//     return Flight.fetchAll()
-//       .then(flights => res.json(flights))
-//       .catch(err => next(err));
-// });
-
-// flightRouter.get('/api/flights/search/departure', jsonParser, (req, res, next) => {
-//     console.log('hit GET /api/flights/search/depature');
-    
-        
-//     return Flight.fetchAll()
-//       .then(flights => res.json(flights))
-//       .catch(err => next(err));
-// });

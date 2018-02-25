@@ -19,7 +19,7 @@ app.use(bodyParser.json());
 app.use(require('./logger-middleware'));
 
 // izzy - load routes
-app.use(require('../route/location-router'));
+// app.use(require('../route/location-router'));
 app.use(require('../route/flight-router'));
 
 // izzy - load error middleware

@@ -22,12 +22,6 @@ app.use(require('./logger-middleware'));
 app.use(require('../route/location-router'));
 app.use(require('../route/flight-router'));
 
-// izzy - catch all 404 route
-// app.all('*', (req, res) => {
-//     logger.log('info', 'returning a 404 from the catch-all route');
-//     return res.sendStatus(404);
-// });
-
 // izzy - load error middleware
 app.use(require('./error-middleware'));
 

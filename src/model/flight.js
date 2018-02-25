@@ -1,10 +1,11 @@
 'use strict';
 
+import Promise from 'bluebird';
 import mongoose from 'mongoose';
 import Location from './location';
 import httpError from 'http-errors';
 
-const Flight = mongoose.Schema({
+const flightSchema = mongoose.Schema({
     To: { type: String, required: true },
     From: { type: String, required: true },
     Departs: { type: Number, required: true },
@@ -16,26 +17,30 @@ const Flight = mongoose.Schema({
 });
 
 
-module.exports = mongoose.model('flight', Flight);
+const Flight = module.exports = mongoose.model('flight', flightSchema);
 
-// Flight.create = function(locationId, flightInfo) {
-//     if(!flightInfo) return new httpError(400, 'location missing')
 
-//     return Location.findById(locationId)
-//         .then(location => {
-//             return new Flight(flightInfo).save()
-//                 .then(newFlight => {
-//                     location.flights.push(newFlight)
-//                     return location.save()
-//                         .then(newFlight => newFlight)
-//                         .then(() => next())
-//                         .catch(next);
-//                 })
-//                 .then(location => location)
-//                 .then(() => next())
-//                 .catch(next);
-//         })
-// }
+// Flight.flightSearch = function(To, From) {
+
+//     return Flight.find({
+//         To: {$eq: To},
+//         From: {$eq: From}
+//     })
+//     .select('To From')
+//     .exec()
+//     .then(flights => flights)
+//     .catch(err => Promise.);
+// };
+
+Flight.fetchAll = function() {
+
+    return Flight.find()
+        .then(flights => Promise.resolve(flights))
+        .catch(err => Promise.reject(new httpError(404, err.message)));
+}
+
+export default Flight;
+
 
 // Flight.fetchOne = function(To, From) {
 //     if(!To || !From) return new httpError(400, 'missing required To and From feilds')
@@ -46,35 +51,3 @@ module.exports = mongoose.model('flight', Flight);
 //         .catch(next)
 // }
 
-Flight.flightSearch = function(To, From) {
-
-    return Flight.find({
-        To: {$eq: To},
-        From: {$eq: From}
-    })
-    .select('To From')
-    .exec()
-    .then(flights => flights)
-    .then(() => next())
-    .catch();
-};
-
-Flight.fetchAll = function() {
-
-    return Flight.find()
-        .then(flights => flights)
-        .then(() => next())
-        .catch(next);
-}
-
-// Flight.flightPlan = function() {
-    
-// }
-
-// Flight.update = function() {
-
-// }
-
-// Flight.delete = function() {
-
-// }

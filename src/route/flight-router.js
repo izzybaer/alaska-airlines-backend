@@ -16,43 +16,39 @@ flightRouter.post('/api/flights', jsonParser, (req, res, next) => {
     console.log('hit POST /api/flights');
     return compile.csvGet()
         .then(() => res.sendStatus(200))
-        .catch(err => next(err));
+        .catch(err => console.log(err));
 });
 
 flightRouter.get('/api/flights', (req, res, next) => {
     console.log('hit GET /api/flights');
 
-    return Flight.fetchAll()
+    Flight.fetchAll()
         .then(flights => res.json(flights))
-        .then(() => next())
         .catch(next);
 });
 
-flightRouter.get('/api/flights/search', jsonParser, (req, res, next) => {
+flightRouter.get('/api/flights/search', (req, res, next) => {
     console.log('hit GET /api/flights/search');
     
-    return Flight.flightSearch(req.params.To, req.params.From)
-        .then(flights => res.json(flights))
-        .then(() => next())
-        .catch(next);
+    Flight.flightSearch(req.params.To, req.params.From)
+      .then(flights => res.json(flights))
+      .catch(err => new Error(err.status, err.message));
 });
 
-flightRouter.get('/api/flights/search/price', jsonParser, (req, res, next) => {
-    console.log('hit GET /api/flights/search/price');
+// flightRouter.get('/api/flights/search/price', jsonParser, (req, res, next) => {
+//     console.log('hit GET /api/flights/search/price');
     
         
-    return Flight.fetchAll()
-      .then(flights => res.json(flights))
-      .then(() => next())
-      .catch(next);
-});
+//     return Flight.fetchAll()
+//       .then(flights => res.json(flights))
+//       .catch(err => next(err));
+// });
 
-flightRouter.get('/api/flights/search/departure', jsonParser, (req, res, next) => {
-    console.log('hit GET /api/flights/search/depature');
+// flightRouter.get('/api/flights/search/departure', jsonParser, (req, res, next) => {
+//     console.log('hit GET /api/flights/search/depature');
     
         
-    return Flight.fetchAll()
-      .then(flights => res.json(flights))
-      .then(() => next())
-      .catch(next);
-});
+//     return Flight.fetchAll()
+//       .then(flights => res.json(flights))
+//       .catch(err => next(err));
+// });

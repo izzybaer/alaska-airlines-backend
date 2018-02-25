@@ -3,62 +3,32 @@
 require('./lib/setup');
 
 import faker from 'faker';
+import mongoose from 'mongoose';
+import httpError from 'http-errors'
 import server from '../lib/server';
 import superagent from 'superagent';
 import Flight from '../model/flight';
+import flightMock from './lib/flight-mock';
 
 const apiURL = `http://localhost:${process.env.PORT}`;
 
-const flightMock = () => {
-    let airportCodes = ['BWI', 'AER', 'ANC', 'ATL', 'BTR', 'AUS', 'BET', 'BHM', 'BUF']
-
-    for(let i = 0; i < airportCodes.length; i++) {
-        return airportCodes[i]
-    };
-
-    return new Flight({
-        To: airportCodes[i],
-        From: airportCodes[i - 1],
-        FlightNumber: faker.random.number(4),
-    }).save();
-};
-
-const flightMockMany = (howMany) => {
-    return Promise.all(new Array(howMany)
-        .fill(0)
-        .map(() => flightMock()));
-};
 
 describe('/api/flights', () => {
     beforeAll(server.start);
-    afterAll(server.stop);
-    afterEach(() => Flight.remove({}));
+    afterAll(() => {
+        flightMock.cleanDB()
+         .then(server.stop);
+});
 
     describe('POST /api/flights', () => {
         it('should respond with a 200 and a flight if there are no errors', () => {
             return superagent.post(`${apiURL}/api/flights`)
-                .send({
-                    To: 'SEA',
-                    From: 'LAS',
-                    FlightNumber: 8973,
-                })
+                .send(flightMock.flight)
                 .then(res => {
                     expect(res.status).toEqual(200);
                     expect(res.body).toBeTruthy();
                 });
             });
-
-        it('should respond with a 400 code if we send an incomplete flight', () => {
-            let flightToPost = {
-                To: 'ATX',
-            };
-            return superagent.post(`${apiURL}/api/flights`)
-                .send(flightToPost)
-                .then(Promise.reject)
-                .catch(res => {
-                    expect(res.status).toEqual(400);
-                });
-        });
 
         it('should respond with a 409 due to a duplicate flight number', () => {
             return flightMock.create()
@@ -67,26 +37,23 @@ describe('/api/flights', () => {
                         .send({
                             To: 'LAX',
                             From: 'SEA',
-                            FlightNumber: flight.FlightNumber,
+                            FlightNumber: 1001
                         });
-                }).then(Promise.reject)
-                  .catch(res => {
-                      expect(res.status).toEqual(409);
-                  });
+                })
+                .then(res => expect(res.status).toEqual(409))
+                .catch(err => new httpError(err.status, err.message));
              });
         });
 
         describe('GET /api/flights', () => {
             it('should respond with a 200 and all flights if there are no errors', () => {
-                return flightMockMany(20)
-                    .then(tempFlights => {
-                        return superagent.get(`${apiURL}/api/flights`);
-                    })
+                return superagent.get(`${apiURL}/flights`)
                     .then(res => {
                         expect(res.status).toEqual(200);
                         expect(res.body.count).toEqual(20)
                         expect(res.body.data.length).toEqual(2);
-                    });
+                    })
+                    .catch(err => new httpError(err.status, err.message));
             });
 
             it('should respond with a 404 not found for a bad endpoint', () => {

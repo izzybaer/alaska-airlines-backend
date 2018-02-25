@@ -9,22 +9,18 @@ import Location from '../model/location';
 const compile = module.exports = {};
 
 compile.csvGet = function() {
-    mongoose.connect('mongodb://localhost/aa-dev');
+    // mongoose.connect('mongodb://localhost/aa-dev');
 
-    return getCSV('/Users/izzybaer/projects/alaska-airlines/alaska-airlines-backend/src/lib/airports.csv')
+    return getCSV(`${__dirname}/airports.csv`)
       .then(rows => {
-        Location.collection.insertMany(rows, function(err, r) {
-          assert.equal(null, err);
-          assert.equal(rows.length, r.insertedCount);
-          console.log('populated locationS');
+        Location.collection.insertMany(rows, function(err) {
+          console.log('populated locations');
         });
       }).then(data => {
-          return getCSV('/Users/izzybaer/projects/alaska-airlines/alaska-airlines-backend/src/lib/flights.csv')
+          return getCSV(`${__dirname}/flights.csv`)
             .then(rows => {
-              Flight.collection.insertMany(rows, function(err, r) {
-                assert.equal(null, err);
-                assert.equal(rows.length, r.insertedCount);
-                mongoose.disconnect();
+              Flight.collection.insertMany(rows, function(err) {
+                // mongoose.disconnect();
                 console.log('populated flights');
               });
             }).catch(err => console.log(err));

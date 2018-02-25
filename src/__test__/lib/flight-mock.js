@@ -3,53 +3,27 @@
 import faker from 'faker';
 import locationMock from './location-mock';
 import Flight from '../../model/flight';
+import mongoose from 'mongoose'
 
 const flightMock = module.exports = {};
 
-let airportCodes = ['BWI', 'AER', 'ANC', 'ATL', 'BTR', 'AUS', 'BET', 'BHM', 'BUF'];
-
 flightMock.create = () => {
-    let mock = {};
-
-    return locationMock.create()
-        .then(location => {
-            mock.location = location;
-
-            return new Flight({
-                To: airportCodes[i],
-                From: airportCodes[i - 1],
-                FlightNumber: faker.random.number(4),
-            }).save();
-        })
-        .then(flight => {
-            mock.flight = flight;
-            return mock;
-        });
+    return new Flight({
+        To: faker.lorem.word(3),
+        From: faker.lorem.word(3),
+        FlightNumber: faker.random.number(4),
+    }).save();
 };
+
+flightMock.flight = ({
+        To: faker.lorem.word(3),
+        From: faker.lorem.word(3),
+        FlightNumber: faker.random.number(),
+    })
 
 flightMock.createMany = (howMany) => {
-    let mock = {};
-
-    return locationMock.create()
-        .then(location => {
-            mock.location = location;
-            return Promise.all(new Array(howMany)
-                .fill(0)
-                .map(() => {
-                    return new Flight({
-                        To: airportCodes[i],
-                        From: airportCodes[i - 1],
-                        FlightNumber: faker.random.number(4),
-                    }).save();
-                }));
-        })
-        .then(flights => {
-            mock.flights = flights;
-            return mock;
-        });
+    return Promise.all(new Array(howMany).fill(0)
+        .map(() => flightMock.create()));
 };
 
-flightMock.remove = () => Promise.all([
-    Flight.remove({}),
-    locationMock.remove(),
-]);
+flightMock.cleanDB = () => Promise.all([Flight.remove({})]);

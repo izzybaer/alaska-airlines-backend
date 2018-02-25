@@ -8,7 +8,7 @@ import httpError from 'http-errors';
 const flightSchema = mongoose.Schema({
     Departs: { type: Number },
     Arrives: { type: Number },
-    FlightNumber: { type: Number },
+    FlightNumber: { type: Number, required: true, unique: true},
     MainCabinPrice: { type: Number },
     FirstClassPrice: { type: Number },
     To: { type: String, required: true },

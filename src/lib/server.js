@@ -1,8 +1,10 @@
 'use strict';
 
-import express from 'express'
-const mongoose = require('mongoose');
-const logger = require('./logger');
+import cors from 'cors';
+import express from 'express';
+import logger from './logger';
+import mongoose from 'mongoose';
+import bodyParser from 'body-parser';
 
 const app = express();
 let isServerOn = false;
@@ -11,10 +13,14 @@ let httpServer = null;
 // mongoose and mongodb
 mongoose.Promise = Promise;
 
+app.use(
+  bodyParser.json(),
+  cors());
 // routes
 app.use(require('./logger-middleware'));
 
 app.use(require('../route/flight-router'));
+
 
 // izzy - this should be at the end
 app.all('*', (request,response) => {
@@ -50,7 +56,6 @@ server.stop = () => {
       logger.log('error','__SERVER_ERROR__ server is already off');
       return reject(new Error('__SERVER_ERROR__ server is already off'));
     }
-    // izzy  - this code might be refactored
     if(!httpServer){
       logger.log('error','__SERVER_ERROR__ there is no server to close');
       return reject(new Error('__SERVER_ERROR__ there is no server to close'));

@@ -18,7 +18,10 @@ flightRouter.post('/api/flights', (req, res, next) => {
 flightRouter.get('/api/flights',(req, res, next) => {
 
     return Flight.fetchAll()
-      .then(flights => res.json(flights))
+      .then(flights => {
+          console.log('flights', flights)
+          res.json(flights);
+      })
       .catch(err => new httpErrors(err.status, err.message));
 });
 

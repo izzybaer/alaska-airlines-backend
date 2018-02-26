@@ -927,3 +927,150 @@
 {"level":"info","message":"processing: GET on: /api/flights/SEA/LAX returned: [object Object]","timestamp":"2018-02-26T06:58:41.494Z"}
 {"level":"info","message":"processing: GET on: /api/flights/SEA/LAX returned: [object Object]","timestamp":"2018-02-26T06:58:51.843Z"}
 {"level":"info","message":"processing: GET on: /api/flights/LAX/SEA returned: [object Object]","timestamp":"2018-02-26T06:58:56.651Z"}
+{"level":"info","message":"Server is listening on port 3000","timestamp":"2018-02-26T07:49:15.468Z"}
+{"level":"info","message":"processing: GET on: /api/flights/SEA/LAX returned: [object Object]","timestamp":"2018-02-26T07:49:21.608Z"}
+{"level":"info","message":"processing: GET on: /api/flights/LAX/SFO returned: [object Object]","timestamp":"2018-02-26T07:49:29.479Z"}
+{"level":"info","message":"processing: GET on: /api/flights/LAX/SFO returned: [object Object]","timestamp":"2018-02-26T07:49:38.547Z"}
+{"level":"info","message":"processing: GET on: /api/flights/LAX/SEA returned: [object Object]","timestamp":"2018-02-26T07:49:48.777Z"}
+{"level":"info","message":"processing: GET on: /api/flights/SEA/LAX returned: [object Object]","timestamp":"2018-02-26T07:50:34.748Z"}
+{"level":"info","message":"processing: GET on: /api/flights/SEA/LAX returned: [object Object]","timestamp":"2018-02-26T07:50:40.878Z"}
+{"level":"info","message":"processing: GET on: /api/flights/SEA/LAX returned: [object Object]","timestamp":"2018-02-26T07:51:21.937Z"}
+{"level":"info","message":"processing: GET on: /api/flights/SEA/LAX returned: [object Object]","timestamp":"2018-02-26T07:51:27.217Z"}
+{"level":"info","message":"processing: GET on: /api/flights/SEA/LAX returned: [object Object]","timestamp":"2018-02-26T07:52:07.910Z"}
+{"level":"info","message":"processing: GET on: /api/flights/SFO/SEA returned: [object Object]","timestamp":"2018-02-26T07:52:13.364Z"}
+{"level":"info","message":"processing: GET on: /api/flights/SFO/SEA returned: [object Object]","timestamp":"2018-02-26T07:52:15.129Z"}
+{"level":"info","message":"processing: GET on: /api/flights/LAS/SEA returned: [object Object]","timestamp":"2018-02-26T07:52:20.067Z"}
+{"level":"info","message":"processing: GET on: /api/flights/SEA/LAX returned: [object Object]","timestamp":"2018-02-26T07:56:13.497Z"}
+{"level":"info","message":"processing: GET on: /api/flights/SEA/LAX returned: [object Object]","timestamp":"2018-02-26T08:12:30.858Z"}
+{"level":"info","message":"processing: GET on: /api/flights/SEA/LAX returned: [object Object]","timestamp":"2018-02-26T08:13:39.978Z"}
+{"level":"info","message":"processing: GET on: /api/flights/SEA/LAX returned: [object Object]","timestamp":"2018-02-26T08:13:49.410Z"}
+{"level":"info","message":"processing: GET on: /api/flights/SEA/LAX returned: [object Object]","timestamp":"2018-02-26T08:23:41.821Z"}
+{"level":"info","message":"processing: GET on: /api/flights/SEA/LAX returned: [object Object]","timestamp":"2018-02-26T08:24:58.657Z"}
+{"level":"info","message":"processing: GET on: /api/flights/SEA/LAX returned: [object Object]","timestamp":"2018-02-26T08:26:14.944Z"}
+{"level":"info","message":"processing: GET on: /api/flights/SEA/LAX returned: [object Object]","timestamp":"2018-02-26T08:27:09.701Z"}
+{"level":"info","message":"processing: GET on: /api/flights/SEA/LAX returned: [object Object]","timestamp":"2018-02-26T08:30:44.540Z"}
+{"level":"info","message":"processing: GET on: /api/flights/SEA/LAX returned: [object Object]","timestamp":"2018-02-26T08:32:30.127Z"}
+{"level":"info","message":"processing: GET on: /api/flights/SEA/LAX returned: [object Object]","timestamp":"2018-02-26T08:32:59.587Z"}
+{"level":"info","message":"processing: GET on: /api/flights/SEA/LAX returned: [object Object]","timestamp":"2018-02-26T08:33:23.061Z"}
+{"level":"info","message":"processing: GET on: /api/flights/SEA/LAX returned: [object Object]","timestamp":"2018-02-26T08:35:16.929Z"}
+{"level":"info","message":"processing: GET on: /api/flights/SEA/LAX returned: [object Object]","timestamp":"2018-02-26T08:36:13.874Z"}
+{"level":"info","message":"processing: GET on: /api/flights/SEA/LAX returned: [object Object]","timestamp":"2018-02-26T08:36:42.306Z"}
+{"level":"info","message":"processing: GET on: /api/flights/SEA/LAX returned: [object Object]","timestamp":"2018-02-26T08:37:07.892Z"}
+{"level":"info","message":"processing: GET on: /api/flights/SEA/LAX returned: [object Object]","timestamp":"2018-02-26T08:38:54.625Z"}
+{"level":"info","message":"processing: GET on: /api/flights/SEA/LAX returned: [object Object]","timestamp":"2018-02-26T08:46:31.181Z"}
+{"level":"info","message":"processing: GET on: /api/flights/SEA/LAX returned: [object Object]","timestamp":"2018-02-26T08:47:06.848Z"}
+{"level":"info","message":"processing: GET on: /api/flights/SEA/LAX returned: [object Object]","timestamp":"2018-02-26T08:49:48.444Z"}
+{"level":"info","message":"processing: GET on: /api/flights/SEA/LAX returned: [object Object]","timestamp":"2018-02-26T08:50:32.873Z"}
+{"level":"info","message":"processing: GET on: /api/flights/SEA/LAX returned: [object Object]","timestamp":"2018-02-26T08:50:58.168Z"}
+{"level":"info","message":"processing: GET on: /api/flights/Seattle,%20WA/Las%20Vegas,%20NV returned: [object Object]","timestamp":"2018-02-26T08:51:04.752Z"}
+{"level":"info","message":"processing: GET on: /api/flights/Seattle,%20WA/Las%20Vegas,%20NV returned: [object Object]","timestamp":"2018-02-26T08:51:07.273Z"}
+{"level":"info","message":"processing: GET on: /api/flights/Seattle,%20WA/Las%20Vegas,%20NV returned: [object Object]","timestamp":"2018-02-26T08:51:38.185Z"}
+{"level":"info","message":"processing: GET on: /api/flights/SEA/LAX returned: [object Object]","timestamp":"2018-02-26T08:56:10.112Z"}
+{"level":"info","message":"processing: GET on: /api/flights/Seattle,%20WA/Las%20Vegas,%20NV returned: [object Object]","timestamp":"2018-02-26T08:56:17.214Z"}
+{"level":"info","message":"processing: GET on: /api/flights/SEA/LAX returned: [object Object]","timestamp":"2018-02-26T08:56:52.964Z"}
+{"level":"info","message":"processing: GET on: /api/flights/SEA/LAX returned: [object Object]","timestamp":"2018-02-26T08:57:24.682Z"}
+{"level":"info","message":"processing: GET on: /api/flights/SEA/LAX returned: [object Object]","timestamp":"2018-02-26T08:57:35.643Z"}
+{"level":"info","message":"processing: GET on: /api/flights/Seattle,%20WA/Las%20Vegas,%20NV returned: [object Object]","timestamp":"2018-02-26T08:57:42.939Z"}
+{"level":"info","message":"processing: GET on: /api/flights/SEA/LAX returned: [object Object]","timestamp":"2018-02-26T08:59:00.713Z"}
+{"level":"info","message":"processing: GET on: /api/flights/SEA/LAX returned: [object Object]","timestamp":"2018-02-26T08:59:13.551Z"}
+{"level":"info","message":"processing: GET on: /api/flights/Seattle,%20WA/Las%20Vegas,%20NV returned: [object Object]","timestamp":"2018-02-26T08:59:19.032Z"}
+{"level":"info","message":"processing: GET on: /api/flights/SEA/LAX returned: [object Object]","timestamp":"2018-02-26T08:59:42.668Z"}
+{"level":"info","message":"processing: GET on: /api/flights/Seattle,%20WA/Las%20Vegas,%20NV returned: [object Object]","timestamp":"2018-02-26T08:59:48.178Z"}
+{"level":"info","message":"processing: GET on: /api/flights/SEA/LAX returned: [object Object]","timestamp":"2018-02-26T09:02:26.798Z"}
+{"level":"info","message":"processing: GET on: /api/flights/SEA/LAX returned: [object Object]","timestamp":"2018-02-26T09:03:20.040Z"}
+{"level":"info","message":"processing: GET on: /api/flights/SEA/LAX returned: [object Object]","timestamp":"2018-02-26T09:03:47.992Z"}
+{"level":"info","message":"processing: GET on: /api/flights/SEA/LAX returned: [object Object]","timestamp":"2018-02-26T09:05:26.011Z"}
+{"level":"info","message":"processing: GET on: /api/flights/SEA/LAX returned: [object Object]","timestamp":"2018-02-26T09:07:59.865Z"}
+{"level":"info","message":"processing: GET on: /api/flights/SEA/LAX returned: [object Object]","timestamp":"2018-02-26T09:08:34.429Z"}
+{"level":"info","message":"processing: GET on: /api/flights/SEA/LAX returned: [object Object]","timestamp":"2018-02-26T09:08:53.072Z"}
+{"level":"info","message":"processing: GET on: /api/flights/SEA/LAX returned: [object Object]","timestamp":"2018-02-26T09:09:35.260Z"}
+{"level":"info","message":"processing: GET on: /api/flights/SEA/LAX returned: [object Object]","timestamp":"2018-02-26T09:10:07.535Z"}
+{"level":"info","message":"processing: GET on: /api/flights/SEA/LAX returned: [object Object]","timestamp":"2018-02-26T09:10:25.779Z"}
+{"level":"info","message":"processing: GET on: /api/flights/Seattle,%20WA/Las%20Vegas,%20NV returned: [object Object]","timestamp":"2018-02-26T09:10:42.038Z"}
+{"level":"info","message":"processing: GET on: /api/flights/SEA/LAX returned: [object Object]","timestamp":"2018-02-26T09:11:23.852Z"}
+{"level":"info","message":"processing: GET on: /api/flights/SEA/LAX returned: [object Object]","timestamp":"2018-02-26T09:12:15.512Z"}
+{"level":"info","message":"processing: GET on: /api/flights/SEA/LAX returned: [object Object]","timestamp":"2018-02-26T09:12:45.842Z"}
+{"level":"info","message":"processing: GET on: /api/flights/SEA/LAX returned: [object Object]","timestamp":"2018-02-26T09:12:56.273Z"}
+{"level":"info","message":"processing: GET on: /api/flights/SEA/LAX returned: [object Object]","timestamp":"2018-02-26T09:13:31.389Z"}
+{"level":"info","message":"processing: GET on: /api/flights/SEA/LAX returned: [object Object]","timestamp":"2018-02-26T09:13:36.683Z"}
+{"level":"info","message":"processing: GET on: /api/flights/SEA/LAX returned: [object Object]","timestamp":"2018-02-26T09:13:45.194Z"}
+{"level":"info","message":"processing: GET on: /api/flights/SEA/LAX returned: [object Object]","timestamp":"2018-02-26T09:13:50.396Z"}
+{"level":"info","message":"processing: GET on: /api/flights/SEA/LAX returned: [object Object]","timestamp":"2018-02-26T09:14:00.084Z"}
+{"level":"info","message":"processing: GET on: /api/flights/LAX/SEA returned: [object Object]","timestamp":"2018-02-26T09:14:04.633Z"}
+{"level":"info","message":"processing: GET on: /api/flights/SEA/LAX returned: [object Object]","timestamp":"2018-02-26T09:16:29.329Z"}
+{"level":"info","message":"processing: GET on: /api/flights/SEA/LAX returned: [object Object]","timestamp":"2018-02-26T09:16:34.195Z"}
+{"level":"info","message":"processing: GET on: /api/flights/SEA/LAX returned: [object Object]","timestamp":"2018-02-26T09:20:54.750Z"}
+{"level":"info","message":"processing: GET on: /api/flights/PHX/SEA returned: [object Object]","timestamp":"2018-02-26T09:21:01.825Z"}
+{"level":"info","message":"processing: GET on: /api/flights/SEA/LAX returned: [object Object]","timestamp":"2018-02-26T09:21:39.626Z"}
+{"level":"info","message":"processing: GET on: /api/flights/SEA/LAX returned: [object Object]","timestamp":"2018-02-26T09:21:57.469Z"}
+{"level":"info","message":"processing: GET on: /api/flights/SEA/LAX returned: [object Object]","timestamp":"2018-02-26T09:22:12.451Z"}
+{"level":"info","message":"Server is listening on port 3000","timestamp":"2018-02-26T17:20:03.771Z"}
+{"level":"info","message":"processing: GET on: /api/flights/SEA/LAX returned: [object Object]","timestamp":"2018-02-26T17:20:26.159Z"}
+{"level":"info","message":"processing: GET on: /api/flights/SEA/LAX returned: [object Object]","timestamp":"2018-02-26T17:48:35.415Z"}
+{"level":"info","message":"processing: GET on: /api/flights/LAX/SEA returned: [object Object]","timestamp":"2018-02-26T17:49:59.198Z"}
+{"level":"info","message":"processing: GET on: /api/flights/LAX/SEA returned: [object Object]","timestamp":"2018-02-26T17:53:15.403Z"}
+{"level":"info","message":"processing: GET on: /api/flights/LAS/SEA returned: [object Object]","timestamp":"2018-02-26T17:53:48.394Z"}
+{"level":"info","message":"processing: GET on: /api/flights/LAX/SEA returned: [object Object]","timestamp":"2018-02-26T17:56:16.298Z"}
+{"level":"info","message":"processing: GET on: /api/flights/SEA/LAX returned: [object Object]","timestamp":"2018-02-26T17:57:40.000Z"}
+{"level":"info","message":"processing: GET on: /api/flights/SEA/LAX returned: [object Object]","timestamp":"2018-02-26T17:58:29.919Z"}
+{"level":"info","message":"processing: GET on: /api/flights/Seattle,%20WA/Las%20Vegas,%20NV returned: [object Object]","timestamp":"2018-02-26T18:30:34.580Z"}
+{"level":"info","message":"processing: GET on: /api/flights/Seattle,%20WA/Las%20Vegas,%20NV returned: [object Object]","timestamp":"2018-02-26T18:32:18.172Z"}
+{"level":"info","message":"processing: GET on: /api/flights/Seattle,%20WA/Las%20Vegas,%20NV returned: [object Object]","timestamp":"2018-02-26T18:33:26.992Z"}
+{"level":"info","message":"processing: GET on: /api/flights/Seattle,%20WA/Las%20Vegas,%20NV returned: [object Object]","timestamp":"2018-02-26T18:34:34.431Z"}
+{"level":"info","message":"processing: GET on: /api/flights/Seattle,%20WA/Las%20Vegas,%20NV returned: [object Object]","timestamp":"2018-02-26T18:35:00.404Z"}
+{"level":"info","message":"processing: GET on: /api/flights/Seattle,%20WA/Los%20Angeles,%20CA returned: [object Object]","timestamp":"2018-02-26T18:35:19.844Z"}
+{"level":"info","message":"processing: GET on: /api/flights/Seattle,%20WA/Las%20Vegas,%20NV returned: [object Object]","timestamp":"2018-02-26T18:35:44.814Z"}
+{"level":"info","message":"processing: GET on: /api/flights/Los%20Angeles,%20CA/Pheonix,%20AZ returned: [object Object]","timestamp":"2018-02-26T18:36:59.973Z"}
+{"level":"info","message":"processing: GET on: /api/flights/Seattle,%20WA/Las%20Vegas,%20NV returned: [object Object]","timestamp":"2018-02-26T18:37:19.815Z"}
+{"level":"info","message":"processing: GET on: /api/flights/Las%20Vegas,%20NV/Los%20Angeles,%20CA returned: [object Object]","timestamp":"2018-02-26T18:37:37.101Z"}
+{"level":"info","message":"processing: GET on: /api/flights/Seattle,%20WA/Las%20Vegas,%20NV returned: [object Object]","timestamp":"2018-02-26T18:37:56.294Z"}
+{"level":"info","message":"processing: GET on: /api/flights/Los%20Angeles,%20CA/Pheonix,%20AZ returned: [object Object]","timestamp":"2018-02-26T18:38:15.818Z"}
+{"level":"info","message":"processing: GET on: /api/flights/undefined/undefined returned: [object Object]","timestamp":"2018-02-26T18:38:59.275Z"}
+{"level":"info","message":"processing: GET on: /api/flights/undefined/undefined returned: [object Object]","timestamp":"2018-02-26T18:39:54.461Z"}
+{"level":"info","message":"processing: GET on: /api/flights/Seattle,%20WA/Los%20Angeles,%20CA returned: [object Object]","timestamp":"2018-02-26T18:40:58.320Z"}
+{"level":"info","message":"processing: GET on: /api/flights/SEA/LAX returned: [object Object]","timestamp":"2018-02-26T18:41:34.243Z"}
+{"level":"info","message":"processing: GET on: /api/flights/SEA/LAX returned: [object Object]","timestamp":"2018-02-26T18:46:34.201Z"}
+{"level":"info","message":"processing: GET on: /api/flights/SEA/LAX returned: [object Object]","timestamp":"2018-02-26T18:54:03.537Z"}
+{"level":"info","message":"Server is listening on port 3000","timestamp":"2018-02-26T18:57:49.364Z"}
+{"level":"info","message":"processing: GET on: /api/flights returned: [object Object]","timestamp":"2018-02-26T18:58:22.155Z"}
+{"level":"info","message":"processing: GET on: /api/flights/SEA/LAX returned: [object Object]","timestamp":"2018-02-26T18:58:37.743Z"}
+{"level":"info","message":"processing: POST on: /api/flights returned: [object Object]","timestamp":"2018-02-26T18:59:37.544Z"}
+{"level":"info","message":"Server is listening on port 3000","timestamp":"2018-02-26T19:01:02.434Z"}
+{"level":"info","message":"processing: POST on: /api/flights returned: [object Object]","timestamp":"2018-02-26T19:01:13.549Z"}
+{"level":"info","message":"Server is listening on port 3000","timestamp":"2018-02-26T19:03:08.372Z"}
+{"level":"info","message":"processing: GET on: /api/flights returned: [object Object]","timestamp":"2018-02-26T19:03:20.439Z"}
+{"level":"info","message":"Server is listening on port 3000","timestamp":"2018-02-26T19:05:30.947Z"}
+{"level":"info","message":"processing: GET on: /api/flights returned: [object Object]","timestamp":"2018-02-26T19:05:34.786Z"}
+{"level":"info","message":"Server is listening on port 3000","timestamp":"2018-02-26T19:07:00.467Z"}
+{"level":"info","message":"processing: GET on: /api/flights returned: [object Object]","timestamp":"2018-02-26T19:07:10.676Z"}
+{"level":"info","message":"processing: POST on: /api/flights returned: [object Object]","timestamp":"2018-02-26T19:07:41.659Z"}
+{"level":"info","message":"Server is listening on port 3000","timestamp":"2018-02-26T19:08:24.528Z"}
+{"level":"info","message":"processing: POST on: /api/flights returned: [object Object]","timestamp":"2018-02-26T19:08:26.125Z"}
+{"level":"info","message":"Server is listening on port 3000","timestamp":"2018-02-26T19:08:41.477Z"}
+{"level":"info","message":"processing: POST on: /api/flights returned: [object Object]","timestamp":"2018-02-26T19:08:43.478Z"}
+{"level":"info","message":"Server is listening on port 3000","timestamp":"2018-02-26T19:09:07.814Z"}
+{"level":"info","message":"processing: POST on: /api/flights returned: [object Object]","timestamp":"2018-02-26T19:09:09.768Z"}
+{"level":"info","message":"processing: POST on: /api/flights returned: [object Object]","timestamp":"2018-02-26T19:10:15.596Z"}
+{"level":"info","message":"Server is listening on port 3000","timestamp":"2018-02-26T19:12:02.659Z"}
+{"level":"info","message":"processing: GET on: /api/flights returned: [object Object]","timestamp":"2018-02-26T19:12:08.401Z"}
+{"level":"info","message":"Server is listening on port 3000","timestamp":"2018-02-26T19:17:36.350Z"}
+{"level":"info","message":"processing: GET on: /api/flights returned: [object Object]","timestamp":"2018-02-26T19:17:40.362Z"}
+{"level":"info","message":"processing: POST on: /api/flights returned: [object Object]","timestamp":"2018-02-26T19:17:51.130Z"}
+{"level":"info","message":"Server is listening on port 3000","timestamp":"2018-02-26T19:20:41.696Z"}
+{"level":"info","message":"processing: POST on: /api/flights returned: [object Object]","timestamp":"2018-02-26T19:21:06.276Z"}
+{"level":"info","message":"Server is listening on port 3000","timestamp":"2018-02-26T19:31:16.248Z"}
+{"level":"info","message":"processing: POST on: /api/flights returned: [object Object]","timestamp":"2018-02-26T19:31:42.947Z"}
+{"level":"info","message":"Server is listening on port 3000","timestamp":"2018-02-26T19:32:16.603Z"}
+{"level":"info","message":"processing: POST on: /api/flights returned: [object Object]","timestamp":"2018-02-26T19:32:50.919Z"}
+{"level":"info","message":"Server is listening on port 3000","timestamp":"2018-02-26T19:34:52.532Z"}
+{"level":"info","message":"processing: POST on: /api/flights returned: [object Object]","timestamp":"2018-02-26T19:34:57.562Z"}
+{"level":"info","message":"processing: GET on: /api/flights returned: [object Object]","timestamp":"2018-02-26T19:35:32.881Z"}
+{"level":"info","message":"Server is listening on port 3000","timestamp":"2018-02-26T19:36:25.886Z"}
+{"level":"info","message":"processing: GET on: /api/flights returned: [object Object]","timestamp":"2018-02-26T19:36:58.332Z"}
+{"level":"info","message":"Server is listening on port 3000","timestamp":"2018-02-26T19:37:19.733Z"}
+{"level":"info","message":"processing: GET on: /api/flights returned: [object Object]","timestamp":"2018-02-26T19:37:22.463Z"}
+{"level":"info","message":"Server is listening on port 3000","timestamp":"2018-02-26T19:42:18.435Z"}
+{"level":"info","message":"processing: GET on: /api/flights returned: [object Object]","timestamp":"2018-02-26T19:42:23.912Z"}
+{"level":"info","message":"Server is listening on port 3000","timestamp":"2018-02-26T19:45:36.738Z"}
+{"level":"info","message":"processing: POST on: /api/flights returned: [object Object]","timestamp":"2018-02-26T19:45:57.326Z"}
+{"level":"info","message":"processing: GET on: /api/flights returned: [object Object]","timestamp":"2018-02-26T19:46:41.396Z"}

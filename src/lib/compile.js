@@ -13,16 +13,21 @@ compile.csvGet = function() {
 
     return getCSV(`${__dirname}/airports.csv`)
       .then(rows => {
-        Location.collection.insertMany(rows, function(err) {
+        Location.collection.insertMany(rows, function(err, r) {
+          assert.equal(null, err);
+          assert.equal(rows.length, r.insertedCount);
           console.log('populated locations');
         });
       }).then(data => {
           return getCSV(`${__dirname}/flights.csv`)
             .then(rows => {
-              Flight.collection.insertMany(rows, function(err) {
-                // mongoose.disconnect();
+              Flight.collection.insertMany(rows, function(err, r) {
+                assert.equal(null, err);
+                assert.equal(rows.length, r.insertedCount);
                 console.log('populated flights');
               });
-            }).catch(err => console.log(err));
-      }).catch(err => console.log(err))
+            }).then(() => console.log('finished inserting to flights'))
+              .catch(err => console.log(err));
+      }).then(() => console.log('finished inserting to locations'))
+      .catch(err => console.log(err))
 };

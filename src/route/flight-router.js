@@ -6,30 +6,29 @@ import httpErrors from 'http-errors';
 import Flight from '../model/flight';
 import compile from '../lib/compile';
 
-const jsonParser = require('body-parser').json();
 const flightRouter = module.exports = new Router();
 
-flightRouter.post('/api/flights', jsonParser, (req, res, next) => {
-    if(!req.body.From || !req.body.To || !req.body.FlightNumber){
-        return next(httpErrors(400, 'Departure, Destination and FlightNumber required'));
-    }
+flightRouter.post('/api/flights', (req, res, next) => {
 
     return compile.csvGet()
-        .then(() => res.sendStatus(200))
-        .catch(next);
+        .then(res => res.sendStatus(res.status))
+        .catch(err => new httpErrors(err.status, err.message));
 });
 
-flightRouter.get('/api/flights', (req, res, next) => {
+flightRouter.get('/api/flights',(req, res, next) => {
 
-    Flight.fetchAll()
-        .then(flights => res.json(flights))
-        .catch(next);
+    return Flight.fetchAll()
+      .then(flights => {
+          console.log('flights', flights)
+          res.json(flights);
+      })
+      .catch(err => new httpErrors(err.status, err.message));
 });
 
-flightRouter.get('/api/flights/search', (req, res, next) => {
+flightRouter.get('/api/flights/:From/:To', (req, res, next) => {
     
-    Flight.flightSearch(req.body.From, req.body.To)
+    return Flight.flightSearch(req.params.From, req.params.To)
       .then(flights => res.json(flights))
-      .catch(next);
+      .catch(err => new httpErrors(err.status, err.message));
 });
 

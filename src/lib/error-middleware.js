@@ -29,6 +29,11 @@ module.exports = (err, req, res, next) => {
         return res.sendStatus(409);
     }
 
+    if(message.includes('duplicate key')) {
+        logger.log('info', `duplicate key error: responding with a 409 status code`);
+        return res.sendStatus(409);
+    }
+
     if(message.includes('unauthorized')) {
         logger.log('info', `unauthorized: responding with a 401 status code`);
         return res.sendStatus(401);

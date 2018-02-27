@@ -3,7 +3,6 @@
 import faker from 'faker';
 import mongoose from 'mongoose'
 import Flight from '../../model/flight';
-import locationMock from './location-mock';
 
 const flightMock = module.exports = {};
 

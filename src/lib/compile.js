@@ -9,6 +9,11 @@ import Location from '../model/location';
 const compile = module.exports = {};
 
 compile.csvGet = function() {
+
+  Flight.remove({}, function() {
+    console.log('collection removed before fetching CSV data');
+  });
+  
     return getCSV(`${__dirname}/airports.csv`)
       .then(rows => {
         Location.collection.insertMany(rows, function(err, r) {

@@ -4,7 +4,7 @@ This is a full stack javascript flight tracker. The frontend was built using Rea
 
 ## tech / frameworks
 
-### frontend:
+## frontend:
 - node.js
     - babel-core
     - babel-jest
@@ -37,13 +37,13 @@ This is a full stack javascript flight tracker. The frontend was built using Rea
     - bootstrap
     - react-bootstrap
 
-### app features
+## app features
 
 - user is able to search for flights between two locations (airport codes)
 - user is able to see a list of flights matching the search params
 - user is able to sort flights by departure or price(first class and main cabin)
 
-### models
+## models
 
 - flightSchema
     - To
@@ -57,7 +57,7 @@ This is a full stack javascript flight tracker. The frontend was built using Rea
     - Name
     - Code
 
-### routes
+## routes
 
 #### POST /api/flights
 
@@ -72,12 +72,12 @@ This is a full stack javascript flight tracker. The frontend was built using Rea
 - this route uses mongoose's `.find().where().exec()` to perform a deep query for the `From` and `To` properties(of the flightSchema) provided by the user
     - this route fetches flights that have matching `To` and `From` queries
     
-### tests
+## tests
 
 - all tests are run through jests testing suite on the backend
 - jest was used to test POST and GET routes
 
-### how to use
+## how to use
 
 - fork and clone both frontend and backend repos into a directory
     - https://github.com/izzybaer/alaska-airlines-frontend
@@ -88,7 +88,7 @@ This is a full stack javascript flight tracker. The frontend was built using Rea
 - once yarn has finished installing..
     - run the command `touch .env` in both terminal tabs from the root of the each repo
 - open two editors, one for each repo, and in each editor window navigate to the .env file
-- paste these environment variables inside the backend .env and save the file
+- paste these environment variables inside the backend .env and save the file: 
 ``` 
 PORT=3000
 DEBUG=true
@@ -97,7 +97,7 @@ CORS_ORIGINS=http://localhost:8080
 APP_SECRET='change_this'
 MONGODB_URI=mongodb://localhost/aa-dev
 ```
-- paste these environment variables inside the frontend .env and save the file
+- paste these environment variables inside the frontend .env and save the file: 
 ```
 CDN_URL=/
 NODE_ENV=dev
@@ -112,7 +112,7 @@ API_URL=http://localhost:3000
 - in **Chrome** (ruler of all browsers)
     - navigate to `http://localhost:8080`
 
-### contributions
+## contributions
     
 - wanna contribute?
     - maybe you have a great idea for refactoring
@@ -121,7 +121,7 @@ API_URL=http://localhost:3000
         
 
 
-### now you can get started searching for flights!
+## now you can get started searching for flights!
 
 
 
@@ -129,7 +129,7 @@ API_URL=http://localhost:3000
 
 
 
-### credits
+## credits
 
 
 [Izzy Baer](https://github.com/izzybaer)

@@ -1,4 +1,4 @@
-# alaska-airlines-backend
+# Flight Tracker 
 
 This is a full stack javascript flight tracker. The frontend was built using React, Bootstrap and Material-UI, the backend was built with MongoDB, Node, and Express. The backend emphatically utilizes Promises.
 
@@ -85,7 +85,26 @@ This is a full stack javascript flight tracker. The frontend was built using Rea
 
 - open a terminal tab for the frontend, and one for the backend
 - run `yarn install` in both the backend tab and the frontend tab
-- open at least one more terminal tab for the backend
+- once yarn has finished installing..
+    - run the command `touch .env` in both terminal tabs from the root of the each repo
+- open two editors, one for each repo, and in each editor window navigate to the .env file
+- paste these environment variables inside the backend .env and save the file
+``` 
+PORT=3000
+DEBUG=true
+API_URL=http://localhost:3000
+CORS_ORIGINS=http://localhost:8080
+APP_SECRET='change_this'
+MONGODB_URI=mongodb://localhost/aa-dev
+```
+- paste these environment variables inside the frontend .env and save the file
+```
+CDN_URL=/
+NODE_ENV=dev
+API_URL=http://localhost:3000
+```
+- navigate back to your terminal
+- open two more terminal tabs inside the backend repo
     - run `yarn dbon` in one tab - wait a couple seconds for mongodb to connect
     - run `yarn start` in another tab - wait a couple seconds for the server to start
 - in the frontend terminal tab 

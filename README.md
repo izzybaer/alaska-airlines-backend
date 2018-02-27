@@ -4,38 +4,33 @@ This is a full stack javascript flight tracker. The frontend was built using Rea
 
 ## tech / frameworks
 
-## frontend:
-- node.js
+## backend:
+  - node.js
+    - babel-cli
     - babel-core
     - babel-jest
+    - babel-eslint
     - babel-loader
     - babel-preset-env
-    - babel-preset-react
-    - clean-webpack-plugin
-    - css-loader
+    - babel-plugin-transform-object-rest-spread
     - dotenv
     - express
-    - extract-text-webpack-plugin
-    - html-webpack-plugin
-    - material-ui
-    - node-sass
-    - react
-    - react-dom
-    - react-redux
-    - react-router-dom
-    - resolve-url-loader
-    - sass-loader
     - superagent
-    - uglifyjs-webpack-plugin
-    - url-loader
-    - webpack
-    - webpack-cli
-    - webpack-dev-server
     - eslint
-    - eslint-plugin-react
     - jest
-    - bootstrap
-    - react-bootstrap
+    - morgan
+    - winston
+    - faker
+    - cors
+    - body-parser
+    - fs-extra
+    - get-csv
+    - http-errors
+    - mongoose
+    - jest-cli
+    - bluebird
+    - bcrypt
+    - expect
 
 ## app features
 
@@ -86,9 +81,10 @@ This is a full stack javascript flight tracker. The frontend was built using Rea
 - open a terminal tab for the frontend, and one for the backend
 - run `yarn install` in both the backend tab and the frontend tab
 - once yarn has finished installing..
-    - run the command `touch .env` in both terminal tabs from the root of the each repo
+    - run the command `touch .env` in both terminal tabs in the root of each repo
 - open two editors, one for each repo, and in each editor window navigate to the .env file
 - paste these environment variables inside the backend .env and save the file: 
+
 ``` 
 PORT=3000
 DEBUG=true
@@ -97,7 +93,9 @@ CORS_ORIGINS=http://localhost:8080
 APP_SECRET='change_this'
 MONGODB_URI=mongodb://localhost/aa-dev
 ```
-- paste these environment variables inside the frontend .env and save the file: 
+
+- paste these environment variables inside the frontend .env and save the file:
+
 ```
 CDN_URL=/
 NODE_ENV=dev
@@ -115,8 +113,9 @@ API_URL=http://localhost:3000
 ## contributions
     
 - wanna contribute?
-    - maybe you have a great idea for refactoring
-    - maybe you have more optimal solutions for fetching data and virtual DOM rendering
+
+    - maybe you have a great idea for refactoring..
+    - maybe you have some unique, efficient solutions..
     - make a PR! 
         
 

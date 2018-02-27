@@ -37,13 +37,13 @@ This is a full stack javascript flight tracker. The frontend was built using Rea
     - bootstrap
     - react-bootstrap
 
-## app features
+### app features
 
 - user is able to search for flights between two locations (airport codes)
 - user is able to see a list of flights matching the search params
 - user is able to sort flights by departure or price(first class and main cabin)
 
-## models
+### models
 
 - flightSchema
     - To
@@ -57,27 +57,27 @@ This is a full stack javascript flight tracker. The frontend was built using Rea
     - Name
     - Code
 
-## routes
+### routes
 
-### POST /api/flights
+#### POST /api/flights
 
 - this route makes a POST request which invokes csv.Get(), a function that uses get-csv to retrieve data from the provided csv files, and populates mongodb with flights
 
-### GET /api/flights
+#### GET /api/flights
 
 - this route uses mongoose's `.find()` to retrieve all flights from the database
 
-### GET /api/flights/search
+#### GET /api/flights/search
 
 - this route uses mongoose's `.find().where().exec()` to perform a deep query for the `From` and `To` properties(of the flightSchema) provided by the user
     - this route fetches flights that have matching `To` and `From` queries
     
-## tests
+### tests
 
 - all tests are run through jests testing suite on the backend
 - jest was used to test POST and GET routes
 
-## how to use
+### how to use
 
 - fork and clone both frontend and backend repos into a directory
     - https://github.com/izzybaer/alaska-airlines-frontend
@@ -93,21 +93,24 @@ This is a full stack javascript flight tracker. The frontend was built using Rea
 - in **Chrome** (ruler of all browsers)
     - navigate to `http://localhost:8080`
 
-## contributions
+### contributions
     
 - wanna contribute?
     - maybe you have a great idea for refactoring
     - maybe you have more optimal solutions for fetching data and virtual DOM rendering
     - make a PR! 
         
-## now you can get started searching for flights!
+
+
+### now you can get started searching for flights!
 
 
 
 
-## credits
 
 
+
+### credits
 
 
 [Izzy Baer](https://github.com/izzybaer)

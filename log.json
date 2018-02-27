@@ -72,3 +72,7 @@
 {"level":"info","message":"Server is listening on port 3000","timestamp":"2018-02-27T19:38:57.209Z"}
 {"level":"info","message":"processing: GET on: /api/flights/SEA/LAX returned: [object Object]","timestamp":"2018-02-27T19:39:36.573Z"}
 {"level":"info","message":"processing: POST on: /api/flights returned: [object Object]","timestamp":"2018-02-27T19:42:18.733Z"}
+{"level":"info","message":"Server is listening on port 3000","timestamp":"2018-02-27T22:06:37.256Z"}
+{"level":"info","message":"processing: GET on: /api/flights/SEA/LAX returned: [object Object]","timestamp":"2018-02-27T22:07:11.621Z"}
+{"level":"info","message":"processing: GET on: /api/flights/PHX/SEA returned: [object Object]","timestamp":"2018-02-27T22:07:54.443Z"}
+{"level":"info","message":"processing: GET on: /api/flights/LAX/SEA returned: [object Object]","timestamp":"2018-02-27T22:10:56.569Z"}

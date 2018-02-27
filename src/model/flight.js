@@ -20,7 +20,7 @@ const Flight = module.exports = mongoose.model('flight', flightSchema);
 
 Flight.flightSearch = function(from, to) {
 
-    return Flight.find({ From: from}).where({ To: to }).exec()
+    return Flight.find({ From: from }).where({ To: to }).exec()
       .then(flights => Promise.resolve(flights))
       .catch(err => Promise.reject(new httpError(err.status, err.message)));
 };

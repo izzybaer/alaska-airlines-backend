@@ -67,7 +67,7 @@ This is a full stack javascript flight tracker. The frontend was built using Rea
 
 - this route uses mongoose's `.find()` to retrieve all flights from the database
 
-## GET /api/flights/search
+### GET /api/flights/search
 
 - this route uses mongoose's `.find().where().exec()` to perform a deep query for the `From` and `To` properties(of the flightSchema) provided by the user
     - this route fetches flights that have matching `To` and `From` queries

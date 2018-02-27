@@ -71,6 +71,7 @@ This is a full stack javascript flight tracker. The frontend was built using Rea
 
 - all tests are run through jests testing suite on the backend
 - jest was used to test POST and GET routes
+- run `yarn test` in a separate backend terminal tab after you've connected to the DB, but make sure to disconnect from the server first because the tests will start the server. 
 
 ## how to use
 
@@ -102,9 +103,12 @@ NODE_ENV=dev
 API_URL=http://localhost:3000
 ```
 - navigate back to your terminal
-- open two more terminal tabs inside the backend repo
+- open three more terminal tabs inside the backend repo
     - run `yarn dbon` in one tab - wait a couple seconds for mongodb to connect
     - run `yarn start` in another tab - wait a couple seconds for the server to start
+    - run `http POST :3000/api/flights` in another tab
+        - you can expect that the server will hang
+        - the csv.Get() gets called when the user makes a POST request (which pulls the data from the two csv files and loads them into MongoDB's collections)
 - in the frontend terminal tab 
     - run `yarn watch` and wait for webpack to compile successfully
 - in **Chrome** (ruler of all browsers)

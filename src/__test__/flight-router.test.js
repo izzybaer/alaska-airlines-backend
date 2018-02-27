@@ -21,15 +21,6 @@ describe('/api/flights', () => {
 });
 
     describe('POST /api/flights', () => {
-        it('should respond with a 200 and a flight if there are no errors', () => {
-            return superagent.post(`${apiURL}/api/flights`)
-                .send(flightMock.flight)
-                .then(res => {
-                    expect(res.status).toEqual(200);
-                    expect(res.body).toBeTruthy();
-                });
-            });
-
         it('should respond with a 409 due to a duplicate flight number', () => {
             return flightMock.create()
                 .then(flight => {

@@ -101,11 +101,16 @@ This is a full stack javascript flight tracker. The frontend was built using Rea
     - make a PR! 
         
 
+
 ### now you can get started searching for flights!
 
 
 
 
+
+
+
 ### credits
+
 
 [Izzy Baer](https://github.com/izzybaer)

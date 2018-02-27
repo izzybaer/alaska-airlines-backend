@@ -14,7 +14,6 @@ compile.csvGet = function() {
         Location.collection.insertMany(rows, function(err, r) {
           assert.equal(null, err);
           assert.equal(rows.length, r.insertedCount);
-          console.log('populated locations');
         });
       }).then(data => {
           return getCSV(`${__dirname}/flights.csv`)
@@ -22,7 +21,6 @@ compile.csvGet = function() {
               Flight.collection.insertMany(rows, function(err, r) {
                 assert.equal(null, err);
                 assert.equal(rows.length, r.insertedCount);
-                console.log('populated flights');
               });
             }).then(() => console.log('finished inserting to flights'))
               .catch(err => console.log(err));

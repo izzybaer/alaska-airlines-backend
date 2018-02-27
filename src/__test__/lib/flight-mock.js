@@ -1,9 +1,9 @@
 'use strict';
 
 import faker from 'faker';
-import locationMock from './location-mock';
-import Flight from '../../model/flight';
 import mongoose from 'mongoose'
+import Flight from '../../model/flight';
+import locationMock from './location-mock';
 
 const flightMock = module.exports = {};
 

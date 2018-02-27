@@ -16,9 +16,10 @@ mongoose.Promise = Promise;
 app.use(
   bodyParser.json(),
   cors());
-// routes
-app.use(require('./logger-middleware'));
 
+app.use(require('./logger-middleware'));
+  
+  // routes
 app.use(require('../route/flight-router'));
 
 

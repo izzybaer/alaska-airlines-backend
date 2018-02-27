@@ -5,6 +5,7 @@ import mongoose from 'mongoose';
 import httpError from 'http-errors';
 
 const flightSchema = mongoose.Schema({
+    DepartsMilitary: {type: Number},
     Departs: { type: String, required: true},
     Arrives: { type: String, required: true },
     FlightNumber: { type: Number, unique: true},

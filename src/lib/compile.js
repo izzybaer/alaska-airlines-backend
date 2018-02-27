@@ -9,8 +9,6 @@ import Location from '../model/location';
 const compile = module.exports = {};
 
 compile.csvGet = function() {
-    // mongoose.connect('mongodb://localhost/aa-dev');
-
     return getCSV(`${__dirname}/airports.csv`)
       .then(rows => {
         Location.collection.insertMany(rows, function(err, r) {

@@ -1,0 +1,2 @@
+{"level":"info","message":"Server is listening on port 3000","timestamp":"2018-02-27T05:34:26.268Z"}
+{"level":"info","message":"processing: GET on: /api/flights/SEA/LAX returned: [object Object]","timestamp":"2018-02-27T05:34:45.920Z"}
